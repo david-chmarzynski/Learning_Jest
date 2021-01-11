@@ -14,3 +14,11 @@ export function asyncAdd(a, b, cb) {
     cb(a + b);
   }, 1000)
 };
+
+export function promiseAdd(a, b) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(a + b);
+    });
+  });
+};

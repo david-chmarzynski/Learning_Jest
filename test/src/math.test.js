@@ -1,4 +1,4 @@
-import { add, fakeGetUser, asyncAdd } from './math';
+import { add, fakeGetUser, asyncAdd, promiseAdd } from './math';
 
 test("1 + 1 should return 2", () => {
   expect(add(1,1)).toBe(2);
@@ -28,4 +28,10 @@ test("Async function", (done) => {
     done();
   };
   asyncAdd(1, 2, cb);
+});
+
+test("Promise Add function", () => {
+  return promiseAdd(1, 2).then(res => {
+    expect(res).toBe(3);
+  });
 });
